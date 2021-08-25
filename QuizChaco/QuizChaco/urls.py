@@ -14,28 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from QuizChaco.views import plantillaUno
-from QuizChaco.views import plantillaPreguntasUno
-from QuizChaco.views import pantallaIndex
-from django.conf import settings
-from django.conf.urls.static import static
-from QuizChaco.views import plantillaQuiz
-from QuizChaco.views import preguntaDos
-from QuizChaco.views import plantillaCargador
-from QuizChaco.views import plantillaShortcut
-from QuizChaco.views import plantillaHija1
-from QuizChaco.views import plantillaHija2
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('plantillaNumeroUno/', plantillaUno),
-    path('plantillaPreguntasUno/', plantillaPreguntasUno),
-    path('index/', pantallaIndex),
-    path('quiz/', plantillaQuiz),
-    path('preguntados/', preguntaDos),
-    path('cargador/', plantillaCargador),
-    path('shortcut/', plantillaShortcut),
-    path('plantillaHija1/', plantillaHija1),
-    path('plantillaHija2/', plantillaHija2),
+    path('chaco-quiz/', include('Aplicaciones.Juego.urls'))
 ]
