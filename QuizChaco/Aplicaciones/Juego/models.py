@@ -5,6 +5,7 @@ from django.db.models.base import Model
 
 class pregunta(models.Model):
 	texto = models.CharField(max_length=200)
+	puntos = models.PositiveSmallIntegerField(default=1)
 	categoria = models.ForeignKey('categoria', on_delete=models.CASCADE)
 
 	def __str__(self):
